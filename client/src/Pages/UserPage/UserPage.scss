@@ -1,0 +1,59 @@
+@import '../../Styles/media-queries';
+
+.user-page{
+    display: grid;
+    grid-template-columns: max-content auto;
+    transition: all 300ms ease-in-out;
+    position: relative;
+    
+    .user-nav{
+        z-index: 30;
+        background-color: var(--white);
+        top: 0;
+        left: 0;
+        border-right: 2px solid var(--almostWhite);
+        height: 90vh;
+        margin-right: 2rem;
+        .openMenuButton{
+            transition: all 300ms ease-in-out;
+            display: none;
+            cursor: pointer;
+            z-index: 20;
+        }
+        ul{
+            list-style: none;
+            margin: 1rem 0rem;
+            li{
+                padding: 1rem;
+                font-size: clamp(1em, 1.5vw, 1.3em);
+                a{
+                    color: var(--black);
+                }
+                .active{
+                    color: var(--teal);
+
+                }
+            }
+            @include phone{
+                position: absolute;
+                left: -11rem;
+                top: 0;
+                .openMenuButton{
+                    position: absolute;
+                    font-size: 1.5rem;
+                    top: -.5rem;
+                    left: 10.5rem;
+                    border-radius: .3rem;
+                    width: 2.3rem;
+                    height: 2.3rem;
+                    box-shadow: 0 0 2px var(--black);
+                    background: linear-gradient(45deg, var(--almostWhite), var(--white));
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+

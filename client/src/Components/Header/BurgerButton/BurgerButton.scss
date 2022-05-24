@@ -1,0 +1,11 @@
+@import "../../../Styles/media-queries";
+
+.burger{
+    color: var(--white);
+    font-size: clamp(1.5em, 2vw, 1.5em);
+    cursor: pointer;
+    display: none;
+    @include tablet{
+        display: block;
+    }
+}

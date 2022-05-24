@@ -1,0 +1,23 @@
+PATCH http://localhost:5000/admins/warn/025c495c-afaa-4ce8-8497-ce76b9b9d8c6
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxZUlkIjoiYjBjMWFjYWMtOGUwYS00Y2NhLWI4ZjAtYzQyZjdhMDc1Yzc5IiwidXNlck5hbWUiOiJQaXhlbHMiLCJyZXZpZXdlciI6ZmFsc2UsImFkbWluTGV2ZWwiOjEsImlzQmFubmVkIjpmYWxzZSwiaWF0IjoxNjUxOTQ3NDc0fQ.m30BhyVv8SHOjRggWh6pPCtHUBnaCDLsElpKFO0q0ps
+
+{
+    "reason": "This is your second warning! Be aware!"
+}
+
+###
+#!non admin
+
+PATCH http://localhost:5000/admins/ban/1aa7bb94-609a-438b-a22a-4913398352e6
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxZUlkIjoiMWFhN2JiOTQtNjA5YS00MzhiLWEyMmEtNDkxMzM5ODM1MmU2IiwidXNlck5hbWUiOiJDaGVuQ2hlbiIsInJldmlld2VyIjpmYWxzZSwiYWRtaW5MZXZlbCI6MCwiaWF0IjoxNjUxNjc3NTU4fQ.BImwLKopaJoGRcW5itgvhP5sAigp6ubiHN4HoUatLjA
+
+###
+PATCH http://localhost:5000/admins/ban/025c495c-afaa-4ce8-8497-ce76b9b9d8c6
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxZUlkIjoiN2JjYjc0NGItNGUwMi00OGJkLWEwZjktMjAxNTk3ZTVlMGUzIiwidXNlck5hbWUiOiJBbG1lZ0FsbWVnIiwicmV2aWV3ZXIiOnRydWUsImFkbWluTGV2ZWwiOjMsImlhdCI6MTY1MTYwMTkwOH0.T5pIcdR4qecFs5jOu8wd9pw0-gVUS22ah8Hj0FNsbd0
+
+{
+    "reason": "Not welcome here"
+}

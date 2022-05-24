@@ -1,0 +1,56 @@
+.g-main-button{
+    background: linear-gradient(-135deg ,var(--teal), var(--lightTeal));
+    color: var(--white);
+    border: none;
+    font-size: clamp(1.2em, 2.5vh, 2em);
+    font-family: var(--headlineFont);
+    border-radius: .5rem;
+    padding: .7rem 1.2rem;
+    cursor: pointer;
+    transition: all 200ms;
+    position: relative;
+    overflow: hidden;
+    &::before{
+        font-family: var(--headlineFont);
+        position: absolute;
+        content: 'Send >';
+        top: 0;
+        left: -100%;
+        background-color: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--black);
+        width: 100%;
+        height: 100%;
+        border-radius: .5rem;
+        transition: all 200ms;
+    }
+    &:hover{
+        &::before{
+            left: 0;
+        }
+    }
+}
+.g-main-button-disabled{
+    opacity: 0.4;
+    background: linear-gradient(-135deg ,var(--teal), var(--lightTeal));
+    color: var(--white);
+    border: none;
+    font-family: var(--headlineFont);
+    font-size: clamp(1.2em, 2.5vh, 2em);
+    border-radius: .5rem;
+    padding: .7rem 1.2rem;
+}
+
+.g-error-button{
+    background-color: var(--error);
+    padding: .7rem 1rem;
+    border-radius: .5rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 300ms;
+    &:hover{
+        box-shadow: 0 0 5px var(--black);
+    }
+}

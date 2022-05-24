@@ -1,0 +1,27 @@
+.form-input{
+    font-size: clamp(1em, 2vw, 1.2em);
+    label{
+        display: block;
+        width: max-content;
+        background-color: var(--white);
+        position: relative;
+        top: calc(1rem + 7px);
+        left: 10px;
+        .field-required{
+            color: var(--error);
+        }
+    }
+    input{
+        margin: .7rem 0;
+        width: 100%;
+        border: 3px solid var(--almostWhite);
+        border-radius: .5rem;
+        padding: .5rem;
+    }
+    .input-ok{
+        border-color: var(--teal);
+    }
+    .input-error{
+        color: var(--error);
+    }
+}

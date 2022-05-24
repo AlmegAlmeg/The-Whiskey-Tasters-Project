@@ -1,0 +1,14 @@
+.error-page{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    min-height: 90vh;
+    font-size: clamp(1.1em, 2.3vw, 1.5em);
+    .error-headline{
+        font-family: var(--headlineFont);
+        font-size: var(--headlineFontSize);
+        color: var(--error);
+    }
+}

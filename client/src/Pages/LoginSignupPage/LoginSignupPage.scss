@@ -1,0 +1,49 @@
+.login-signup-section{
+    display: grid;
+    align-items: center;
+    min-height: 80vh;
+
+    .flipper{
+        position: relative;
+        min-height: 40vh;
+        .login, .signup{
+            position: absolute;
+            width: 100%;
+            backface-visibility: hidden;
+            transition: all 500ms;
+        }
+        .signup{
+            transform: rotateY(180deg);
+        }
+        .login-flipped{
+            transform: rotateY(180deg);
+        }
+        .signup-flipped{
+            transform: rotateY(0deg);
+        }
+    }
+
+    .login-signup-page-headline{
+        font-size: var(--headlineFontSize);
+        font-family: var(--headlineFont);
+        text-decoration: underline;
+        color: var(--darkTeal);
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .login-toggler{
+        padding-bottom: 1rem;
+        margin: auto;
+        width: max-content;
+        cursor: pointer;
+        font-size: clamp(1.2em, 1.7vh, 1.7em);
+        transition: all 200ms;
+        &:hover{
+            text-decoration: underline;
+        }
+        span{
+            color: var(--gold);
+            font-weight: bold;
+        }
+    }
+}

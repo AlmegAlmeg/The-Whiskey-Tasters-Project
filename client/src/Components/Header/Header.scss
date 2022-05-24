@@ -1,0 +1,19 @@
+@import '../../Styles/media-queries';
+
+.app-header{
+    background-color: var(--black);
+    box-shadow: 0 0 5px var(--black);
+    padding: .5%;
+    .navigation{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include large-tablet{
+            flex-direction: column;
+            gap: .3rem;
+        }
+        @include tablet{
+            flex-direction: row;
+        }
+    }
+}

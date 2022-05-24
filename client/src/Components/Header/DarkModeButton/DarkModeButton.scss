@@ -1,0 +1,7 @@
+.dark-mode-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: clamp(1em, 1vw, 1em);
+    color: var(--white);
+}
