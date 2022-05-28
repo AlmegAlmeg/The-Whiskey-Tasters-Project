@@ -5,7 +5,7 @@
     grid-template-columns: max-content auto;
     transition: all 300ms ease-in-out;
     position: relative;
-    
+    left: 0rem;
     .user-nav{
         z-index: 30;
         background-color: var(--white);
@@ -31,7 +31,7 @@
                 }
                 .active{
                     color: var(--teal);
-
+                    text-decoration: underline;
                 }
             }
             @include phone{
@@ -52,8 +52,13 @@
                     justify-content: center;
                     align-items: center;
                 }
+                .open{
+                    transform: rotate(-180deg);
+                }
             }
         }
     }
 }
-
+.open{
+    left: 11rem;
+}

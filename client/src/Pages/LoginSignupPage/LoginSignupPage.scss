@@ -1,11 +1,11 @@
 .login-signup-section{
     display: grid;
     align-items: center;
-    min-height: 80vh;
+    margin-top: 2rem;
 
     .flipper{
         position: relative;
-        min-height: 40vh;
+        min-height: 20vh;
         .login, .signup{
             position: absolute;
             width: 100%;

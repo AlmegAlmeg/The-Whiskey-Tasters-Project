@@ -47,10 +47,10 @@ router.post('/login', async (req,res) => {
         const checkPass = await compareHash(password, currentUser.password)
         if(!checkPass) throw 'Wrong password'
 
-        const { uniqeId, userName, reviewer, adminLevel, isBanned } = currentUser
+        const { uniqeId, userName, reviewer, adminLevel, isBanned, profileImage } = currentUser
         if(isBanned) throw 'You are banned from our system'
         
-        const token = await createToken({ uniqeId, userName, reviewer, adminLevel, isBanned })
+        const token = await createToken({ uniqeId, userName, reviewer, adminLevel, isBanned, profileImage })
         res.send(token)
     } catch (err) {
         console.log(err)
@@ -75,21 +75,21 @@ router.put('/me/update', userAuth, async (req,res) => {
         let { userName, email, password, newPassword } = await updateSchema.validateAsync(req.body ,options)
         const [currentUser] = await findByUniqeId(req.token.uniqeId)
         
-        if(password && password == newPassword) throw 'Your new password cannot be similar to your current password'
         
         if(userName != currentUser.userName) {
             let usersArr = await User.find({ userName: userName })
             if(usersArr.length != 0) throw 'This username is already taken'
         }
-
+        
         if(email != currentUser.email){
             let usersArr = await User.find({ email: email })
             if(usersArr.length != 0) throw 'This email is already exists'
         }
-
+        
         if(newPassword){
             const checkPass = await compareHash(password, currentUser.password)
             if(!checkPass) throw 'Wrong password'
+            if(password && password == newPassword) throw 'Your new password cannot be similar to your current password'
             newPassword = await createHash(newPassword)
         }
         await User.findByIdAndUpdate(currentUser.id, { userName, email, password: newPassword })
@@ -98,7 +98,8 @@ router.put('/me/update', userAuth, async (req,res) => {
             userName,
             reviewer: currentUser.reviewer,
             adminLevel: currentUser.adminLevel,
-            isBanned: currentUser.isBanned
+            isBanned: currentUser.isBanned,
+            profileImage: currentUser.profileImage
         })
         res.send(token)
     } catch (err) {
@@ -108,12 +109,10 @@ router.put('/me/update', userAuth, async (req,res) => {
 
 router.patch('/me/profile-photo', userAuth, upload.single('profile'), async (req,res) => {
     try {
-        let { path: profileImage } = req.file
+        let { filename } = req.file
         const [{ id }] = await findByUniqeId(req.token.uniqeId)
-        profileImage = profileImage.replace(/\\/g,'/')
-        console.log(profileImage)
-        const {profileImage: image} = await User.findByIdAndUpdate(id, { profileImage })
-        res.send(image)
+        const { profileImage } = await User.findByIdAndUpdate(id, { profileImage: filename })
+        res.send(profileImage)
     } catch (err) {
         res.status(400).send(err)
     }

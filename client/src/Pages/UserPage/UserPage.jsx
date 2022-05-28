@@ -25,9 +25,9 @@ const UserPage = () => {
 
 
     return (
-        <section className="user-page">
+        <section className={`user-page ${isMenuOpen ? 'open': null}`}>
             <div className="user-nav left">
-                <ul className={`${isMenuOpen ? 'open': null}`}>
+                <ul>
                     <div className={`openMenuButton ${isMenuOpen && 'open'}`} onClick={()=> setIsMenuOpen(prev => !prev)}>
                         <FontAwesomeIcon icon={faAngleRight}/>
                     </div>

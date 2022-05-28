@@ -12,6 +12,7 @@ import HomePage from './Pages/HomePage/HomePage'
 import LoginSignupPage from './Pages/LoginSignupPage/LoginSignupPage'
 import Logout from './Pages/Logout/Logout'
 import UserPage from './Pages/UserPage/UserPage'
+import Footer from './Components/Footer/Footer'
 
 const user = getCurrentUser()
 export const UserContext = React.createContext(user)
@@ -31,6 +32,7 @@ function App() {
               <Route path='*' element={<Error404Page />}/>
             </Routes>
           </main>
+        <Footer />
     </div>
   )
 }

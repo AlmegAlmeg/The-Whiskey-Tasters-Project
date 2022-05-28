@@ -18,7 +18,7 @@ const Menu = ({ toggleMenu, setToggleMenu }) => {
 
     const openAvatarMenu = () => {
         const width = window.innerWidth
-        if(width <= 800) return setIsAvatarMenuOpen(true)
+        if(width <= 600) return setIsAvatarMenuOpen(true)
         setIsAvatarMenuOpen(prevValue => !prevValue)
     }
 
@@ -30,7 +30,7 @@ const Menu = ({ toggleMenu, setToggleMenu }) => {
             {currentUser ? 
                 <li className='menu-li'>
                     <button title={currentUser.userName} onClick={openAvatarMenu}>
-                        <img className='profile-image' src={"./assets/images/profile.png"} alt="profile" />
+                        <img className='profile-image' src={process.env.REACT_APP_UPLOADS_FOLDER + currentUser.profileImage} alt="profile" />
                     </button>
                     {isAvatarMenuOpen && <AvatarMenu openAvatarMenu={openAvatarMenu} />}
                 </li>:

@@ -1,0 +1,50 @@
+.update-form{
+    h3{
+        font-size: clamp(1.5em, 2.5vw, 2.2em);
+        text-decoration: underline;
+        margin-bottom: 1rem;
+    }
+    img{
+        display: block;
+        width: min(150px, 18rem);
+        object-fit: cover;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        box-shadow: 0 0 5px var(--black);
+    }
+    p{
+        padding-top: 1rem;
+        color: var(--lightTeal);
+    }
+    .file-custom{
+        font-size: clamp(.9em, 1.7vw, 1em);
+        display: block;
+        cursor: pointer;
+        position: relative;
+        margin: .7rem 0;
+        width: min-content;
+        height: 2.7rem;
+        border: 3px solid var(--almostWhite);
+        border-radius: .5rem;
+        padding: .5rem;
+        .upload-input{
+            opacity: 0;
+        }
+    }
+    .update-pass-button{
+        font-size: clamp(1em, 1.5vw, 1.2em);
+        cursor: pointer;
+        background-color: var(--darkTeal);
+        border: 2px solid var(--black);
+        color: var(--white);
+        border-radius: .5rem;
+        padding: .3rem .5rem;
+    }
+    .error-handler{
+        font-size: clamp(1em, 1.5vw, 1.2em);
+        color: var(--error);
+    }
+    .form-btn{
+        margin-top: 2rem;
+    }
+}

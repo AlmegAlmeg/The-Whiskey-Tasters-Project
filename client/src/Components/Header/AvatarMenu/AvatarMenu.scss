@@ -12,7 +12,7 @@
     @include large-tablet{
         top: 4.2rem;
     }
-    @include tablet{
+    @include phone{
         top: 4rem;
         left: 50%;
         transform: translate(-50%);
@@ -27,7 +27,7 @@
         height: 20px;
         background-color: rgba(0, 0, 0, 0.85);
         clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
-        @include tablet{
+        @include phone{
             left: 45%;
         }
     }

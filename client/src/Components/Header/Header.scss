@@ -1,6 +1,7 @@
 @import '../../Styles/media-queries';
 
 .app-header{
+    min-height: 5vh;
     background-color: var(--black);
     box-shadow: 0 0 5px var(--black);
     padding: .5%;
@@ -8,11 +9,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @include large-tablet{
-            flex-direction: column;
-            gap: .3rem;
-        }
-        @include tablet{
+        @include phone{
             flex-direction: row;
         }
     }

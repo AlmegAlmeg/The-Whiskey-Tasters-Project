@@ -1,12 +1,19 @@
+@import '../../Styles/media-queries';
+
 .form{
     border: 3px solid var(--teal);
     border-radius: 1rem;
-    width: min(85%, 50rem);
+    width: min(90%, 50rem);
     padding: 1rem 2rem;
+
     margin: auto;
+    @include phone{
+        padding: 1rem .7rem;
+    }
     .err-handler{
         text-align: center;
         color: var(--error);
+        font-size: clamp(1em, 1vw, 1.2em);
     }
     .form-btn{
         margin-top: 2rem;
