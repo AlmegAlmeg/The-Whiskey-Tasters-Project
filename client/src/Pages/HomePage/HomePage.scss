@@ -1,0 +1,13 @@
+.home-page-wrapper{
+    position: relative;
+    perspective: 10px;
+    .home-page{
+        transform-style: preserve-3d;
+
+        .bgImage{
+            opacity: 0.3;
+            z-index: -1;
+            transform: translateZ(-10px) scale(3);
+        }
+    }
+}

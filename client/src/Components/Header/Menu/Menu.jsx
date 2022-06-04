@@ -4,6 +4,7 @@ import { UserContext } from '../../../App'
 import { useState, useEffect, useContext } from 'react'
 import AvatarMenu from '../AvatarMenu/AvatarMenu'
 import ROUTES from '../../../Config/routes'
+import { DEFAULT_PROFILE } from '../../../Services/users'
 // import DarkModeButton from '../DarkModeButton/DarkModeButton'
 
 const Menu = ({ toggleMenu, setToggleMenu }) => {
@@ -30,7 +31,7 @@ const Menu = ({ toggleMenu, setToggleMenu }) => {
             {currentUser ? 
                 <li className='menu-li'>
                     <button title={currentUser.userName} onClick={openAvatarMenu}>
-                        <img className='profile-image' src={process.env.REACT_APP_UPLOADS_FOLDER + currentUser.profileImage} alt="profile" />
+                        <img className='profile-image' src={currentUser.profileImage ? process.env.REACT_APP_UPLOADS_FOLDER + currentUser.profileImage : DEFAULT_PROFILE} alt="profile" />
                     </button>
                     {isAvatarMenuOpen && <AvatarMenu openAvatarMenu={openAvatarMenu} />}
                 </li>:
