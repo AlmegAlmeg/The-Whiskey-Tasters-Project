@@ -9,7 +9,7 @@ import Loader from '../../Components/Shared/Loader/Loader'
 const LoginSignupPage = () => {
     const [loginOn, setLoginOn] = useState(true)
     const [isLoading, setIsLoading] = useState(false)
-    const user = useContext(UserContext)
+    const currentUser = useContext(UserContext)
 
     const flipCard = () => {
         setLoginOn(prevValue => !prevValue)
@@ -22,7 +22,7 @@ const LoginSignupPage = () => {
     return (
         <section className='login-signup-section'>
             {isLoading && <Loader />}
-            {user && <Navigate to='/'/>}
+            {currentUser && <Navigate to='/'/>}
             <div>
                 <h3 className='login-signup-page-headline'>{loginOn ? 'Login to': 'Signup Into'} our system:</h3>
                 <p className='login-toggler' onClick={flipCard}>

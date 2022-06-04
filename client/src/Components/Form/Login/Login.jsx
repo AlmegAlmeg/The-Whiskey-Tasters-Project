@@ -11,7 +11,7 @@ const Login = ({ setIsLoading }) => {
         email: '',
         password: ''
     }
-
+    
     const [errHandler, setErrHandler] = useState('')
 
     const { data, errors, handleChange, validate } = useValidation(userSchema, loginSchema)

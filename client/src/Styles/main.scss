@@ -1,50 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Grape+Nuts&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Grape+Nuts&family=Poppins&display=swap");
 
-:root{
-    --black: rgb(34, 34, 34);
-    --darkTeal: rgb(4, 67, 67);
-    --teal: rgb(4, 87, 87);
-    --lightTeal: rgb(6, 129, 129);
-    --gold: rgb(255, 218, 11);
-    --fadedTeal: rgba(14, 219, 219, 0.2);
-    --error: rgb(200, 0, 0);
-    --almostWhite: rgb(228, 228, 228);
-    --white: rgb(255,255,255);
+:root {
+  --black: rgb(34, 34, 34);
+  --darkTeal: rgb(4, 67, 67);
+  --teal: rgb(4, 87, 87);
+  --lightTeal: rgb(9, 158, 158);
+  --veryLightTeal: rgb(15, 189, 189);
+  --gold: rgb(255, 218, 11);
+  --fadedTeal: rgba(14, 219, 219, 0.2);
+  --error: rgb(200, 0, 0);
+  --almostWhite: rgb(228, 228, 228);
+  --white: rgb(255, 255, 255);
 
-    --headlineFontSize: clamp(2em, 4vw, 2.5em);
+  --headlineFontSize: clamp(2em, 4vw, 2.5em);
 
-    --mainFont: 'poppins', sans-serif;
-    --headlineFont: 'Bebas Neue', cursive;
-    --styledFont: 'Grape Nuts', cursive;
+  --mainFont: "poppins", sans-serif;
+  --headlineFont: "Bebas Neue", cursive;
+  --styledFont: "Grape Nuts", cursive;
 }
 
-*, *::before, *::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--mainFont);
-    text-decoration: none;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--mainFont);
+  text-decoration: none;
 }
 
-.dark{
-    --black: rgb(22, 22, 22);
+.dark {
+  --black: rgb(22, 22, 22);
 }
 
-@import 'global-classes';
+@import "global-classes";
 
-.app-body{
-    background-color: var(--white);
+.app-body {
+  background-color: var(--white);
 }
 
-.main-content{
-    max-width: 77rem;
-    margin: auto;
-    padding: 0 1rem;
+.main-content {
+  max-width: 77rem;
+  margin: auto;
+  padding: 0 1rem;
 }
 
-.routes-section{
-    padding: 1rem;
-    overflow-x: hidden;
-    min-height: 90vh;
-    // height: 100vh;
+.routes-section {
+  padding: 1rem;
+  overflow-x: hidden;
+  min-height: 90vh;
+  // height: 100vh;
 }

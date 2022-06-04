@@ -5,7 +5,6 @@ import { useState, useEffect, useContext } from 'react'
 import AvatarMenu from '../AvatarMenu/AvatarMenu'
 import ROUTES from '../../../Config/routes'
 import { DEFAULT_PROFILE } from '../../../Services/users'
-// import DarkModeButton from '../DarkModeButton/DarkModeButton'
 
 const Menu = ({ toggleMenu, setToggleMenu }) => {
 

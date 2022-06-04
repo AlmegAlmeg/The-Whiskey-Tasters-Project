@@ -7,7 +7,10 @@ const ROUTES = {
     LOGIN: '/login',
     LOGOUT: '/logout',
     ABOUT: '/about',
+    PAGE_NOT_FOUND: '*',
+    // reviews routes
     REVIEWS: '/reviews',
+    NEW_REVIEW: '/reviews/new-review',
     // user routes
     USER: '/user',
     USER_ME: `/user/me/${user?.userName}`,

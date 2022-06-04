@@ -1,0 +1,13 @@
+.reviews-page {
+  padding: 0.5rem;
+  .reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      font-family: var(--headlineFont);
+      font-size: clamp(1.8em, 3.5vw, 2.2em);
+      font-weight: 400;
+    }
+  }
+}

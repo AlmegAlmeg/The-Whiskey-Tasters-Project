@@ -11,3 +11,7 @@ auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxZUlkIjoiYjBjMWFjYWMtOGU
 {
     "commentBody": "I love that one, so tasty!"
 }
+
+###
+GET http://localhost:5000/reviews/all
+Content-Type: application/json
