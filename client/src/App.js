@@ -14,7 +14,6 @@ import Logout from "./Pages/Logout/Logout"
 import UserPage from "./Pages/UserPage/UserPage"
 import ReviewsPage from "./Pages/Reviews/ReviewsPage"
 import NewReview from "./Pages/NewReview/NewReview"
-import getState from "./globalState"
 import { getCurrentUser } from "./Services/users"
 
 const currentUser = getCurrentUser()

@@ -41,12 +41,17 @@ const schema = new mongoose.Schema({
         min: 1,
         max: 10
     },
+    imageUrl: {
+        type: String,
+        required: true,
+        minlength: 2
+    },
     creator: {
         type: mongoose.SchemaTypes.String,
         required: true,
     },
-    likes: [String],
-    comments: [commentSchema]
+    likes: [],
+    comments: []
 })
 
 const Review = mongoose.model('reviews', schema)

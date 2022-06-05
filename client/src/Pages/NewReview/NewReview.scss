@@ -1,0 +1,45 @@
+.new-review-form{
+    max-width: 90vw;
+    margin: auto;
+    .form-headline{
+        padding-top: 1rem;
+        text-decoration: underline;
+        font-family: var(--headlineFont);
+        font-weight: 400;
+        text-align: center;
+        font-size: clamp(1.8em, 3.5vw, 2.2em);
+    }
+    .form-rating{
+        text-align: right;
+        position: relative;
+        top: 1rem;
+        label{
+            padding: .3rem;
+        }
+        select{
+            background-color: var(--white);
+            border: 3px solid var(--almostWhite);
+            border-radius: .5rem;
+            padding: .5rem;
+        }
+    }
+    .desc-label{
+        display: block;
+        width: max-content;
+        background-color: var(--white);
+        position: relative;
+        top: calc(1rem + 7px);
+        left: 10px;
+        .field-required{
+            color: var(--error);
+        }
+    }
+    textarea{
+        margin: .7rem 0;
+        width: 100%;
+        border: 3px solid var(--almostWhite);
+        border-radius: .5rem;
+        padding: .5rem;
+        resize: none;
+    }
+}

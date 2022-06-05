@@ -37,11 +37,11 @@ const createCustomError = (type) => {
         case 'any.empty':
             return 'This field is required'
         case 'string.min':
-            return 'This field must contain at least 2 characters'
+            return 'Too short, try something longer...'
         case 'string.email':
             return 'Please provide a valid email'
         case 'string.max':
-            return 'This field cannot contain more then 16 characters'
+            return 'A little bit too much, try shorter...'
         case 'string.regex.base':
             return 'Only english characters and numbers are allowed'
         default: 

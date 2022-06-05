@@ -1,5 +1,10 @@
 .reviews-page {
   padding: 0.5rem;
+  .logo-img{
+    width: 50%;
+    display: block;
+    margin: auto;
+  }
   .reviews-header {
     display: flex;
     justify-content: space-between;
@@ -8,6 +13,24 @@
       font-family: var(--headlineFont);
       font-size: clamp(1.8em, 3.5vw, 2.2em);
       font-weight: 400;
+    }
+  }
+  hr{
+    color: var(--almostWhite);
+  }
+  .view-and-filtering{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button{
+      margin-left: 1rem;
+      scale: 1.15;
+    }
+    input{
+      border: 2px solid var(--almostWhite);
+      padding: .5rem;
+      border-radius: .5rem;
     }
   }
 }

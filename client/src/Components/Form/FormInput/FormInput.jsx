@@ -1,10 +1,10 @@
 import './FormInput.scss'
 
-const FormInput = ({ name, errors, label, handleChange, type='text', defaultValue = '', disabled = false }) => {
+const FormInput = ({ name, errors, label, handleChange, type='text', defaultValue = '', disabled = false ,required = true }) => {
     return (
         <div className='form-input'>
             <label htmlFor={name}>
-                <span className='field-required'>*</span>
+                {required && <span className='field-required'>*</span>}
                 {label}
             </label>
             <input 

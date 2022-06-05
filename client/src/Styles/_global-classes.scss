@@ -69,3 +69,14 @@
     color: var(--white);
   }
 }
+
+.g-btn-active {
+  padding: 0.3rem 0.7rem;
+  background-color: var(--lightTeal);
+  border: 1px solid var(--lightTeal);
+  color: var(--white);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: clamp(0.7em, 1vh, 1.5em);
+  transition: all 100ms;
+}

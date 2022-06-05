@@ -11,7 +11,7 @@ const options = { abortEarly: false }
 //? Create new review
 router.post("/new", async (req, res) => {
   try {
-    let { title, subtitle, description, rating } =
+    let { title, subtitle, description, rating, imageUrl } =
       await reviewSchema.validateAsync(req.body, options)
     if (!subtitle) subtitle = ""
 
@@ -22,6 +22,7 @@ router.post("/new", async (req, res) => {
       subtitle,
       description,
       rating,
+      imageUrl,
       creator: req.token.uniqeId,
     })
     await review.save()
