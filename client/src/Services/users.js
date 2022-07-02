@@ -31,3 +31,5 @@ export const getCurrentUser = () => {
         return null
     }
 }
+
+export const getAllStaff = () => axios.get(`${URL}/users/get-staff`)

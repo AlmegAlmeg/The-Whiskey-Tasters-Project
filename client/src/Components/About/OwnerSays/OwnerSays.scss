@@ -1,0 +1,14 @@
+.owner-says{
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+    
+    h5{
+        font-size: clamp(1em, 2vw, 1.7rem);
+        color: var(--error);
+    }
+    a{
+        color: var(--black);
+        text-decoration: underline;
+    }
+}

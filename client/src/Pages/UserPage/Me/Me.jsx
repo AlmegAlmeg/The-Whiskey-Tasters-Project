@@ -36,7 +36,6 @@ const Me = ({ user: {userName, email, adminLevel, reviewer, warnings, profileIma
                     </tr>
                 </tbody>
             </table>
-
         </div>
     )
 }

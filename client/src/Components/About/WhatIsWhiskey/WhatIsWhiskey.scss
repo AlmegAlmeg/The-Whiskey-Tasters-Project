@@ -1,0 +1,25 @@
+@import '../../../Styles/media-queries';
+
+.what-is-whiskey{
+    article{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        @include tablet{
+            flex-direction: column;
+        }
+        .right{
+            img{
+                border-radius: 50%;
+                max-width: 15rem;
+                box-shadow: 0 0 5px var(--black);
+                animation: changeShadowColor 5s infinite alternate;
+            }
+        }
+    }
+}
+
+@keyframes changeShadowColor {
+    0%{ box-shadow: 0 0 5px var(--teal); }
+    100%{ box-shadow: 0 0 5px var(--gold); }
+}

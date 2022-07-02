@@ -6,7 +6,6 @@ import { DEFAULT_PROFILE, updateUser, uploadProfilePhoto } from '../../../Servic
 import Loader from '../../../Components/Shared/Loader/Loader'
 import './Update.scss'
 import UpdatePass from './UpdatePass'
-import { useParams } from 'react-router-dom'
 
 const Update = ({ user }) => {
     let formData = new FormData()

@@ -1,6 +1,6 @@
-import { faEdit, faHeart, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../../../App'
 import ROUTES from '../../../Config/routes'
@@ -13,11 +13,19 @@ const ReviewDetailsComponent = ({ data: { review, user } }) => {
 
     const [isPopupOpen, setIsPopupOpen] = useState(false)
     const [likesCount, setLikesCount] = useState(review.likes.length)
+    const [isLiked, setIsLiked] = useState(null)
     const currentUser = useContext(UserContext)
-    
+
+    useEffect(() => {
+        if(!currentUser) return
+        let liked = review.likes.includes(currentUser.uniqeId)
+        setIsLiked(liked)
+    }, [review.likes])
+
     const handleLike = async () => {
         const res = await likeReview(review.reviewId)
         setLikesCount(res.data)
+        setIsLiked(value => !value)
     }
 
     const condition = currentUser && (currentUser.uniqeId === review.creator || currentUser.adminLevel > 0)
@@ -45,8 +53,8 @@ const ReviewDetailsComponent = ({ data: { review, user } }) => {
                     <FontAwesomeIcon icon={faTrash}/> Delete
                 </button>
             </div> }
-            {user && <button className='g-like-btn ' onClick={handleLike}>
-                <FontAwesomeIcon icon={faHeart} /> 
+            {currentUser && <button className='like-btn' onClick={handleLike}>
+                {isLiked ? 'Liked' : 'Like'}
             </button>}
             <h4>Created By:</h4>
             <CreatedByCard user={user} />

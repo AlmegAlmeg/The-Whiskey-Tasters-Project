@@ -47,7 +47,7 @@ const HomePage = () => {
                 <div className='info'>
                     <h2 className='section-title'>Experiment with us!</h2>
                     <p>Our staff is highly experienced, from smelling to tasing and from the tongue to the aftertaste. With deep dive into the whiskey we write a honest and professional review for you.</p>
-                    <Link className='g-btn info-btn' to={ROUTES.ABOUT_STAFF}>Our Staff</Link>
+                    <Link className='g-btn info-btn' to={`${ROUTES.ABOUT}#staff`}>Our Staff</Link>
                 </div>
                 <img src="/assets/images/home-image5.jpg" alt="taster with a glass" />
             </section>

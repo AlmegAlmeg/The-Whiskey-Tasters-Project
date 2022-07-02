@@ -8,6 +8,7 @@ import Footer from "./Components/Footer/Footer"
 
 //Pages
 import Error404Page from "./Pages/Error404/Error404"
+import About from './Pages/About/About'
 import HomePage from "./Pages/HomePage/HomePage"
 import LoginSignupPage from "./Pages/LoginSignupPage/LoginSignupPage"
 import Logout from "./Pages/Logout/Logout"
@@ -29,11 +30,15 @@ function App() {
       <main className="main-content routes-section">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+          
           {/* Users routes */}
           <Route path="/user/*" element={<UserPage />} />
           <Route path="/login" element={<LoginSignupPage />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/reviews" element={<ReviewsPage />} />
+
+          {/* Reviews routes */}
           <Route path="/reviews/new-review" element={<NewReview />}/>
           <Route path="/reviews/edit/:id" element={<EditReview />}/>
           <Route path="/reviews/:id" element={<ReviewDetails />}/>

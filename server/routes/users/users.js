@@ -59,7 +59,7 @@ router.post('/login', async (req,res) => {
 })
 
 
-//TODO Get all info about me -> // CHANGE
+//? Get current user's details
 router.get('/me', userAuth, async (req,res) => {
     try {
         const [currentUser] = await findByUniqeId(req.token.uniqeId)
@@ -113,6 +113,17 @@ router.patch('/me/profile-photo', userAuth, upload.single('profile'), async (req
         const [{ id }] = await findByUniqeId(req.token.uniqeId)
         const { profileImage } = await User.findByIdAndUpdate(id, { profileImage: filename })
         res.send(profileImage)
+    } catch (err) {
+        res.status(400).send(err)
+    }
+})
+
+//? Get all admins
+router.get('/get-staff', async (req,res) => {
+    try {
+        const users = await User.find({ $or: [{ adminLevel: {$gt: 0} }, { reviewer: true }] }).limit(10)
+        users.sort((a,b) =>  a.adminLevel - b.adminLevel).reverse()
+        res.send(users)
     } catch (err) {
         res.status(400).send(err)
     }

@@ -18,7 +18,6 @@ const DeletePopup = ({ id, setIsPopupOpen }) => {
             navigate(-1)
         } catch (err) {
             setIsLoading(false)
-            console.log(err)
         }
     }
 

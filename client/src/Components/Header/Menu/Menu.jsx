@@ -24,7 +24,7 @@ const Menu = ({ toggleMenu, setToggleMenu }) => {
 
     return (
         <ul className={`menu ${toggleMenu ? 'opened': null}`} onClick={()=> setToggleMenu(false)}>
-            <li className='menu-li'><NavLink activeclassname="active" to={ROUTES.HOME}>Homepage</NavLink></li>
+            <li className='menu-li'><NavLink activeclassname="active" to={ROUTES.HOME}>Home</NavLink></li>
             <li className='menu-li'><NavLink activeclassname="active" to={ROUTES.ABOUT}>About Us</NavLink></li>
             <li className='menu-li'><NavLink activeclassname="active" to={ROUTES.REVIEWS}>Reviews</NavLink></li>
             {currentUser ? 

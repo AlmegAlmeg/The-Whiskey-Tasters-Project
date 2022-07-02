@@ -35,9 +35,8 @@ const EditReview = () => {
                 })
             })
         } catch (err) {
-            console.log(err)
         }
-    }, [])
+    }, [id])
     
     const [isLoading, setIsLoading] = useState(false)
 
@@ -57,7 +56,6 @@ const EditReview = () => {
             setIsCreated(true)
         } catch (err) {
             setIsLoading(false)
-            console.log(err)
         }
     }
 

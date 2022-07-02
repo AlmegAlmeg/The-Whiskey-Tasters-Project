@@ -11,13 +11,18 @@ import MiniLoader from '../../Components/Shared/Loader/MiniLoader'
 import Me from './Me/Me'
 import Update from './Update/Update'
 import Error404Page from '../Error404/Error404'
+import LikedReviews from './LikedReviews/LikedReviews'
+import { getAllReviews } from '../../Services/reviews'
+import MyReviews from './MyReviews/MyReviews'
 
 const UserPage = () => {
     const [user, setUser] = useState(null)
+    const [reviews, setReviews] = useState(null)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     useEffect(()=>{
         getUserInfo().then(res => setUser(res.data))
+        getAllReviews().then(res => setReviews(res.data))
     }, [])
 
     const currentUser = useContext(UserContext)
@@ -43,9 +48,11 @@ const UserPage = () => {
                 </ul>
             </div>
             <div className="routes right">
-                {user ? 
+                {(user && reviews) ? 
                     <Routes>
                         <Route path='/me/:userName' element={<Me user={user} />} />
+                        <Route path='/:id/liked-reviews' element={<LikedReviews user={user} reviews={reviews} />}  />
+                        <Route path='/:id/reviews' element={<MyReviews user={user} reviews={reviews} />}  />
                         <Route path='/update/:userName' element={<Update user={user} />} />
                         <Route path='*' element={<Error404Page />}/>
                     </Routes>

@@ -40,7 +40,6 @@ const NewReview = () => {
             setIsCreated(true)
         } catch (err) {
             setIsLoading(false)
-            console.log(err)
         }
     }
 

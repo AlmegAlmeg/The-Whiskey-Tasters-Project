@@ -15,7 +15,7 @@ const AvatarMenu = ({ openAvatarMenu }) => {
                 {currentUser && (currentUser.reviewer || currentUser.adminLevel !== 0) &&
                     <li><Link to={ROUTES.USER_MY_REVIEWS}>Your reviews</Link></li>
                 }
-                {currentUser && currentUser.adminLevel !== 0 && <li><Link to={ROUTES.ADMIN_OVERVIEW}>Admin Panel</Link></li>}
+                {/* {currentUser && currentUser.adminLevel !== 0 && <li><Link to={ROUTES.ADMIN_OVERVIEW}>Admin Panel</Link></li>} */}
                 <li><Link to={ROUTES.LOGOUT}>Logout</Link></li>
             </ul>
         </div>
