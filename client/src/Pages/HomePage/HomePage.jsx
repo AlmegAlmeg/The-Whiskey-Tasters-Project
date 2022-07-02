@@ -1,11 +1,78 @@
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import ROUTES from '../../Config/routes'
 import './HomePage.scss'
 
 const HomePage = () => {
+
+    useEffect(()=> {
+
+        const infoSections = document.querySelectorAll('.info-section')
+        setTimeout(()=> {
+
+            const obs = new IntersectionObserver(itemsArr => {
+                itemsArr.forEach(item => {
+                    item.target.classList.toggle('show', item.isIntersecting)
+                    if(item.isIntersecting) obs.unobserve(item.target)
+                })
+            }, { threshold: 1 })
+            
+            infoSections.forEach(section => obs.observe(section))
+        }, 1000)
+    })
+    
     return (
-        <div className="home-page-wrapper">
-            <section className='home-page'>
-                <img src="/assets/images/background.png" alt="whiskey background" className='bgImage' />
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi odio esse voluptatibus cum nostrum soluta distinctio quas fuga porro, illo in quaerat! Corrupti quae voluptatibus vel amet exercitationem nostrum delectus rerum eos at quibusdam tempore repellendus, quisquam accusamus unde! Deserunt accusantium atque dolore, temporibus dicta tempora soluta laborum placeat aliquid sunt nam, est iste expedita corporis dolor tempore autem aspernatur? Dolor, quisquam unde quasi quas odit sint perspiciatis similique a error ullam ducimus ab animi aut, doloremque deleniti quam dolorem earum dolorum officiis, mollitia tempore repudiandae quibusdam? Sed expedita similique, cupiditate veritatis, velit itaque nisi aliquid sapiente asperiores, fugiat debitis praesentium fuga esse doloribus fugit explicabo voluptatum! Officia a, minus culpa cupiditate, iure eius aut, inventore maxime ipsa nulla quis. Quidem laborum eligendi sed, aperiam deleniti accusantium voluptates illum saepe adipisci iure repellendus, laudantium numquam quo facilis qui commodi repellat praesentium. Impedit ipsa ullam quam consequatur, pariatur praesentium reiciendis magni sint, distinctio esse explicabo dolores. Esse harum nobis ducimus aliquam reprehenderit facere soluta fugit perspiciatis asperiores est officiis nihil a porro distinctio cupiditate qui natus consequatur, voluptates magnam ipsam accusantium, deleniti quisquam tempore in? Corporis voluptas ea natus reiciendis voluptatem dicta quo sed maxime praesentium, quisquam vitae mollitia cum totam. Unde, ex mollitia voluptate natus odio accusantium, molestias non itaque nulla amet necessitatibus eligendi earum vitae qui. Deleniti ullam est corporis, excepturi aliquid quisquam dicta, ea, maiores atque ipsum voluptatem! Explicabo beatae illo neque. Reprehenderit dignissimos animi dolore eos! Aspernatur animi odio fugit accusantium ad, sed dolor nostrum officiis soluta? Excepturi sint incidunt modi! Odio voluptatum itaque saepe quas tenetur iusto non fuga officia, quia sed fugit nemo perferendis repellendus harum consectetur laudantium quis mollitia unde beatae. Voluptas non fuga aperiam laboriosam amet magni, id eum repellendus, iste possimus, voluptatem qui! Veritatis voluptates dolorum iusto accusantium, quod blanditiis maiores obcaecati exercitationem esse necessitatibus ipsum magni consectetur fugiat officiis corporis earum, explicabo animi ratione quidem aliquid quisquam alias laudantium? Sunt velit dolores at voluptatum omnis reprehenderit fugiat maiores, libero ducimus alias nihil cupiditate iusto aperiam dolor similique, hic in laboriosam nulla quas neque officiis repellendus saepe delectus! Numquam ducimus similique eligendi provident fugiat. Alias at rem in fugiat optio voluptas? Debitis numquam doloribus earum non consequatur exercitationem provident cumque, praesentium facilis odit molestiae eum vero iusto nisi, quae esse dolor doloremque sint deleniti amet, laudantium error ratione vitae. Praesentium voluptas minima accusantium quidem voluptate sint a fugit, excepturi magnam possimus voluptatem maiores veritatis assumenda quam, repudiandae repellat reprehenderit asperiores. Commodi repellat recusandae esse doloremque perspiciatis ullam enim praesentium iure exercitationem error, animi cupiditate, quia harum maxime dolore consequuntur numquam illo nobis vel eveniet repudiandae? Illum modi quam harum culpa incidunt voluptatibus consequatur odit expedita dignissimos minima ab, consectetur sit enim? Deleniti rem consequatur suscipit veniam perspiciatis reprehenderit cum dolor ad similique est, fugiat nobis accusantium voluptatem? Earum accusantium cupiditate impedit ab maxime, recusandae magni, expedita explicabo eligendi harum placeat, iure vero. Dolor ad rem explicabo et voluptatum dicta laudantium asperiores eveniet laborum ipsam? Blanditiis consequatur neque dolores eaque velit officiis in voluptate omnis ea adipisci, laudantium dolor illo aut explicabo animi laboriosam ipsa necessitatibus atque nisi eveniet nihil corrupti quaerat obcaecati. Enim nam consequatur, amet facilis eos eaque at totam perspiciatis? Quibusdam, dignissimos necessitatibus reprehenderit fugit eos magnam voluptas rem harum cupiditate cum enim aut ea laboriosam alias eius similique nulla maxime blanditiis, ab, natus illum ipsam minima sint aliquid. Officia quo dignissimos vel! Cum totam voluptatum amet nostrum, adipisci omnis pariatur sequi, reiciendis, veniam laudantium illum quasi? Repellendus totam culpa minus optio aut facilis sequi natus ipsa sunt eligendi, consequuntur praesentium id harum. Asperiores, molestias ab accusamus totam ipsam atque. Aut enim laborum totam error quo aliquid, odit officia illum consequatur deleniti magni reprehenderit ex neque quae inventore labore et, animi alias omnis necessitatibus officiis, explicabo veniam. Facilis quasi neque id, rerum quia accusantium cumque non nihil iusto. Explicabo accusamus laborum iure cum doloribus magnam repellendus temporibus non amet culpa vitae, tempore facere incidunt officiis architecto maxime assumenda harum hic? Natus quis accusantium itaque labore assumenda debitis consequatur officiis porro iste quisquam nobis ipsa rerum deleniti voluptate temporibus, veritatis unde facilis autem! Consequatur, nulla debitis quasi natus, ducimus, error repellendus qui sit quam facilis quisquam. Repellendus facere nisi velit quo a consequuntur eum neque corrupti sit accusantium, explicabo, consectetur fuga repudiandae voluptates nulla commodi facilis asperiores optio autem odio ad blanditiis! Non itaque, nobis amet reprehenderit ipsum ullam minima maiores recusandae. Magni velit nulla, impedit nobis eligendi quam sunt doloremque voluptatem praesentium, iste consequuntur perspiciatis asperiores quisquam quas labore ex aperiam voluptates. Reprehenderit voluptate saepe cum perferendis molestiae illo non porro, mollitia placeat doloribus similique dignissimos magni repellendus. Doloribus eaque consequatur voluptas minus quibusdam voluptatum maiores iure, magnam natus animi adipisci quisquam optio modi quos? Quaerat vero beatae molestiae blanditiis illum temporibus voluptatibus dolorum amet totam ex inventore debitis necessitatibus ipsam, quae quisquam laudantium sunt dicta aperiam architecto laboriosam! Dolore itaque saepe earum accusantium ad iusto! Veniam quidem doloremque corporis maiores quis rem eos fugit facere aspernatur ullam, itaque dicta natus dolor nulla temporibus odio nisi expedita harum. Dolorum quas ut ipsum amet officiis placeat dicta totam saepe voluptatem illum, exercitationem fugit impedit nobis animi temporibus, suscipit ipsam eligendi neque numquam laborum sapiente enim doloremque? Illum enim assumenda, necessitatibus illo dolores ullam sequi sint maiores adipisci explicabo in. Quia, dolorem explicabo! Nemo a sint optio numquam eligendi nesciunt, tempora aliquid exercitationem vero ut adipisci esse quasi. Nihil quo soluta, doloremque molestiae obcaecati nesciunt nostrum mollitia sapiente quos veniam consequatur iste repellat enim sequi magnam aspernatur dolor deleniti nam cum! Labore facilis laborum similique quidem quibusdam. Quaerat, commodi aut ipsam sapiente incidunt veniam. Consequuntur rem quisquam similique a sunt debitis enim molestiae libero. Excepturi quod laborum reprehenderit maxime magni doloribus nihil aspernatur porro officia soluta voluptates iusto et, at beatae, aut natus? Cumque repellendus mollitia aperiam culpa totam at reiciendis porro eius recusandae vitae doloremque consequuntur nulla minima sunt nostrum fugit dignissimos beatae itaque, necessitatibus ex. Amet voluptatem, tempore, itaque ad dolorem atque quae qui, mollitia explicabo temporibus illum dignissimos ducimus.</p>
+        <div className="home-page">
+            <section className="logo">
+                <img src="/assets/images/logo.jpg" alt="logo" />
+            </section>
+
+            <section className="info-section rtl">
+                <div className='info'>
+                    <p>We are:</p>
+                    <h2 className='section-title'>The Whiskey Tasters</h2>
+                </div>
+                <img src="/assets/images/home-image1.jpg" alt="whiskey in a glass" />
+            </section>
+
+            <section className="info-section ltr">
+                <div className="info">
+                    <h2>More then just "Alcohol"</h2>
+                    <p>For us, whiskey is more then just alcohol to drink - Whiskey is ART! We invite you to experience a huge variety of whiskeys</p>
+                </div>
+                <img src="/assets/images/home-image2.jpg" alt="drinking together" />
+            </section>
+
+            <section className="info-section rtl">
+                <div className='info'>
+                    <h2 className='section-title'>Experiment with us!</h2>
+                    <p>Our staff is highly experienced, from smelling to tasing and from the tongue to the aftertaste. With deep dive into the whiskey we write a honest and professional review for you.</p>
+                    <Link className='g-btn info-btn' to={ROUTES.ABOUT_STAFF}>Our Staff</Link>
+                </div>
+                <img src="/assets/images/home-image5.jpg" alt="taster with a glass" />
+            </section>
+
+            <section className="info-section ltr">
+                <div className="info">
+                    <h2>Liquid gold, around the world</h2>
+                    <p>Why limit ourselves to only one country? The whiskey comes from many countries that give it a different hue, taste, smell and character</p>
+                </div>
+                <img src="/assets/images/home-image3.jpg" alt="many whiskies" />
+            </section>
+
+            <section className="info-section rtl">
+                <div className="info">
+                    <h2>Whiskey for everyone</h2>
+                    <p>Explore all kind of whiskies with us! We believe everyone can like at least one whiskey - Have you found yours?</p>
+                    <Link className='g-btn info-btn' to={ROUTES.REVIEWS}>Read Our Reviews</Link>
+                </div>
+                <img src="/assets/images/home-image4.jpg" alt="johnnie walkers" />
+            </section>
+
+            <section className='info-section go-to-about'>
+                <img src="/assets/images/logo2.jpg" alt="logo" />
+                    <h2>Want to know more?</h2>
+                    <Link className='g-btn info-btn' to={ROUTES.ABOUT}>About Us</Link>
             </section>
         </div>
     )

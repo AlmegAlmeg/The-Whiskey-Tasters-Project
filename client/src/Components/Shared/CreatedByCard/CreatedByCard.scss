@@ -1,0 +1,16 @@
+.created-by-card{
+    padding: .5rem;
+    background-color: var(--fadedTeal);
+    max-width: 12rem;
+    border: 1px solid var(--black);
+    border-radius: .5rem;
+    display: grid;
+    justify-items: center;
+    gap: .5rem;
+    img{
+        border-radius: 50%;
+        object-fit: cover;
+        aspect-ratio: 1;
+        box-shadow: 0 0 2px var(--black);
+    }
+}

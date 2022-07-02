@@ -6,11 +6,13 @@ const ROUTES = {
     HOME: '/',
     LOGIN: '/login',
     LOGOUT: '/logout',
-    ABOUT: '/about',
     PAGE_NOT_FOUND: '*',
+    ABOUT: '/about',
+    ABOUT_STAFF: '/about/staff',
     // reviews routes
     REVIEWS: '/reviews',
     NEW_REVIEW: '/reviews/new-review',
+    EDIT_REVIEW: '/reviews/edit',
     // user routes
     USER: '/user',
     USER_ME: `/user/me/${user?.userName}`,

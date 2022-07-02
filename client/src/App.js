@@ -14,7 +14,10 @@ import Logout from "./Pages/Logout/Logout"
 import UserPage from "./Pages/UserPage/UserPage"
 import ReviewsPage from "./Pages/Reviews/ReviewsPage"
 import NewReview from "./Pages/NewReview/NewReview"
+import EditReview from "./Pages/EditReview/EditReview"
+
 import { getCurrentUser } from "./Services/users"
+import ReviewDetails from "./Pages/ReviewDetails/ReviewDetails"
 
 const currentUser = getCurrentUser()
 export const UserContext = React.createContext(currentUser)
@@ -32,6 +35,8 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/reviews/new-review" element={<NewReview />}/>
+          <Route path="/reviews/edit/:id" element={<EditReview />}/>
+          <Route path="/reviews/:id" element={<ReviewDetails />}/>
 
           <Route path="*" element={<Error404Page />} />
         </Routes>

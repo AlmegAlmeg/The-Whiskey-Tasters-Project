@@ -1,5 +1,5 @@
-import { getTextByAdminLevel } from "../../../Config/labels"
 import './Me.scss'
+import { getTextByAdminLevel } from '../../../util/labels'
 import { DEFAULT_PROFILE } from '../../../Services/users'
 
 const Me = ({ user: {userName, email, adminLevel, reviewer, warnings, profileImage } }) => {

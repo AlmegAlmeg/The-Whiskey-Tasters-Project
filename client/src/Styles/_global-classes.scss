@@ -80,3 +80,27 @@
   font-size: clamp(0.7em, 1vh, 1.5em);
   transition: all 100ms;
 }
+
+.g-review-btn{
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  background-color: var(--lightTeal);
+  margin: .5rem;
+  padding: .3rem;
+  border-radius: .5rem;
+  border: none;
+  color: var(--white);
+  transition: all 100ms;
+  &:hover{
+    letter-spacing: 2px;
+  }
+}
+
+.g-edit{
+  background-color: var(--teal);
+}
+
+.g-delete{
+  background-color: var(--error);
+}

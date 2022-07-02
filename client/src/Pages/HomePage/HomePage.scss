@@ -1,13 +1,114 @@
-.home-page-wrapper{
-    position: relative;
-    perspective: 10px;
-    .home-page{
-        transform-style: preserve-3d;
+@import '../../Styles/media-queries';
 
-        .bgImage{
-            opacity: 0.3;
-            z-index: -1;
-            transform: translateZ(-10px) scale(3);
+.home-page{
+    .logo{
+        position: relative;
+        top: -100%;
+        animation: logoFadeIn 700ms forwards ease-in-out;
+        opacity: 0;
+        img{
+            display: block;
+            margin: auto;
+            width: 70%;
         }
+    }
+
+    .info-section{
+        position: relative;
+        height: 30vh;
+        padding: 1rem;
+        margin: 1rem 0;
+        opacity: 0;
+        transition: all 1000ms;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include phone{
+            gap: .5rem;
+            height: fit-content;
+            flex-direction: column;
+            text-align: center;
+        }
+        .info{
+            padding: .5rem;
+            h2{
+                font-size: clamp(1.5rem, 3vw, 2rem);
+                position: relative;
+                overflow: hidden;
+                display: inline-block;
+                &::after{
+                    transition: all 700ms;
+                    position: absolute;
+                    content: '';
+                    background-color: var(--gold);
+                    left: -100%;
+                    bottom: 0;
+                    height: 3px;
+                    width: 100%;
+                    animation: loadingLike 1500ms infinite ease-in-out;
+                }
+            }
+            p, .info-btn{
+                font-size: clamp(1rem, 1.7vw, 1.5rem);
+            }
+            .info-btn{
+                position: relative; 
+                top: 10px;
+                transition: all 700ms;
+                &:hover{
+                    letter-spacing: 1px;
+                }
+            }
+        }
+        img{
+            height: 80%;
+            aspect-ratio: 1.2/1;
+            object-fit: cover;
+            border-radius: .7rem;
+            box-shadow: 0 0  10px var(--lightGrey);
+            @include phone{
+                width: 70%;
+                height: 20vh;
+                position: relative;
+                bottom: -20px;
+            }
+        }
+    }
+    .show{
+        opacity: 1;
+    }
+    .ltr{
+        flex-direction: row-reverse;
+        text-align: right;
+        @include phone{
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    .go-to-about{
+        flex-direction: column;
+        gap: 2rem;
+        img{
+            border-radius: 50%;
+            aspect-ratio: 1;
+        }
+        .info-btn{
+            font-size: clamp(1.5rem, 2vw, 2rem);
+        }
+    }
+}
+
+// Animations
+
+@keyframes logoFadeIn {
+    100%{ 
+        top: 0; 
+        opacity: 1; 
+    }
+}
+
+@keyframes loadingLike {
+    100%{
+        left: 100%;
     }
 }
