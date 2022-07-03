@@ -2,6 +2,7 @@ import WhatIsWhiskey from '../../Components/About/WhatIsWhiskey/WhatIsWhiskey'
 import OwnerSays from '../../Components/About/OwnerSays/OwnerSays'
 import './About.scss'
 import OurStaff from '../../Components/About/OurStaff/OurStaff'
+import FAQ from '../../Components/About/FAQ/FAQ'
 
 const About = () => {
     return (
@@ -12,6 +13,7 @@ const About = () => {
             <WhatIsWhiskey />
             <OwnerSays />
             <OurStaff />
+            <FAQ />
         </div>
     )
 }

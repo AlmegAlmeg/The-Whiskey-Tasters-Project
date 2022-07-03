@@ -1,4 +1,12 @@
 footer{
-    min-height: 10vh;
+    min-height: 5vh;
     background-color: var(--darkTeal);
+    display: grid;
+    justify-items: center;
+    h5{
+        color: var(--almostWhite);
+        font-size: 1.2rem;
+        padding: .3rem;
+        text-align: center;
+    }
 }

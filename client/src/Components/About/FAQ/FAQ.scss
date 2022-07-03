@@ -1,1 +1,28 @@
-
+.faq-section{
+    .single-faq{
+        padding: 1.5rem 1rem;
+        cursor: pointer;
+        border-bottom: 1px solid var(--black);
+        &:last-child{
+            border-bottom: none;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h4{
+                font-size: clamp(1.1em, 2vw, 1.7rem);
+            }
+            .icon{
+                transition: all 300ms;
+            }
+            .open{
+                transform: rotate(90deg);
+            }
+        }
+        p{
+            font-size: clamp(.9em, 1.8vw, 1.5rem);
+            padding: .5rem 0;
+        }
+    }   
+}
